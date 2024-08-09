@@ -1,6 +1,17 @@
-import { inter } from './fonts'
+import { Inter, Quattrocento } from "next/font/google"
 import "./style/style.scss";
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '$font-inter',
+  display: 'swap',
+})
+
+const quattrocento = Quattrocento({
+  subsets: ['latin'],
+  variable: '$font-quattrocento',
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -9,8 +20,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${inter.variable} ${quattrocento.variable}`}>
+      <body>
         <div className="wrapper"> 
           <div className="container">
             {children}      

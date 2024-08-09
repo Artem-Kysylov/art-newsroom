@@ -5,6 +5,7 @@ html {
 body {
     background-color: $black;
     color: $lightGrey;
+    font-family: $font-inter;
 }
 
 .container {
@@ -18,4 +19,8 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+h1 {
+    font-family: $font-inter;
 }
