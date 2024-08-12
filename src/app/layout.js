@@ -1,15 +1,20 @@
 import { Inter, Quattrocento } from "next/font/google"
-import "./style/style.scss";
+import "@/style/style.scss"
+
+// Import components 
+import { Navbar } from "@/components/navbar/Navbar"
+import { Footer } from "@/components/footer/Footer"
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '$font-inter',
+  variable: '--font-inter',
   display: 'swap',
 })
 
 const quattrocento = Quattrocento({
   subsets: ['latin'],
-  variable: '$font-quattrocento',
+  weight: ['400', '700'],
+  variable: '--font-quattrocento',
   display: 'swap',
 })
 
@@ -20,12 +25,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${quattrocento.variable}`}>
+    <html lang="en" style={{ '--font-inter': inter.style.fontFamily, '--font-quattrocento': quattrocento.style.fontFamily }}>
       <body>
         <div className="wrapper"> 
-          <div className="container">
-            {children}      
-          </div>
+          <Navbar/>
+            {children}
+          <Footer/>
         </div>
       </body>
     </html>
