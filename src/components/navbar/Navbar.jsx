@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export const Navbar = () => {
   return (
-    <header>
+    <header className={styles.header}>
       <div className='container'>
         <div className={styles.navbar__wrapper}>
           <Link href='/'>
@@ -20,7 +20,19 @@ export const Navbar = () => {
             />
           </Link>
 
-          <nav></nav>
+          <nav>
+            <ul className={styles.nav__list}>
+              {
+                navData.map((item) => (
+                  <li key={item.id}>
+                    <Link href={item.link}>
+                      <p className={styles.nav__link}>{item.title}</p>
+                    </Link>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
         </div>
 
       </div>

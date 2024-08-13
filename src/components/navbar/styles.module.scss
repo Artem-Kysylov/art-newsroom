@@ -1,0 +1,36 @@
+@import '/src/style/vars';
+
+.header {
+    padding: 20px 0;
+    background: $lightBlack;
+
+    .navbar__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav__list {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+
+            li {
+                &:last-child {
+                    border-left: 1px solid $lightGrey;
+
+                    .nav__link {
+                        padding-left: 45px;
+                    }
+                }
+
+                .nav__link {
+                    transition: opacity 0.8s ease;
+
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}
