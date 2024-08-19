@@ -18,8 +18,10 @@
                 &:last-child {
                     border-left: 1px solid $lightGrey;
 
+
                     .footer__navLink {
                         padding-left: 45px;
+
                     }
                 }
 
@@ -36,6 +38,42 @@
         .footer__copy {
             font-size: 14px;
             color: $lightGrey;
+        }
+
+        @media(max-width: 768px) {
+            .footer__navList {
+                flex-direction: column; 
+                
+                li {
+                    &:last-child {
+                        border-left: none;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 185px;
+                            height: 1px;
+                            background-color: $lightGrey;
+                          }
+    
+                        .footer__navLink {
+                            padding-left: 0px;
+                            padding-top: 45px;
+                        }
+                    }
+    
+                    .footer__navLink {
+                        transition: opacity 0.8s ease;
+    
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
         }
     }
 }
