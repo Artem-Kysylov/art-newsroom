@@ -9,27 +9,108 @@
         align-items: center;
         justify-content: space-between;
 
-        .nav__list {
-            display: flex;
-            align-items: center;
-            gap: 45px;
-
-            li {
-                &:last-child {
-                    border-left: 1px solid $lightGrey;
-
+        nav {
+            .nav__list {
+                display: flex;
+                align-items: center;
+                gap: 45px;
+    
+                li {
+                    &:last-child {
+                        border-left: 1px solid $lightGrey;
+    
+                        .nav__link {
+                            padding-left: 45px;
+                        }
+                    }
+    
                     .nav__link {
-                        padding-left: 45px;
+                        transition: opacity 0.8s ease;
+    
+                        &:hover {
+                            opacity: 0.5;
+                        }
                     }
                 }
+            }
+        }
 
-                .nav__link {
-                    transition: opacity 0.8s ease;
+        .menu__button {
+            display: none;
+        }
 
-                    &:hover {
-                        opacity: 0.5;
+    }
+
+    @media(max-width: 1000px) {
+        .navbar__wrapper {
+            nav {
+                .nav__list {
+                    gap: 30px;
+
+                    li {
+                        &:last-child {
+                            .nav__link {
+                                padding-left: 30px;
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+               
+    }
+}
+
+@media(max-width: 768px) {
+    .header {
+        padding: 10px 0;
+
+        .navbar__wrapper {
+            nav {
+                .nav__list {
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 50px;
+                    background-color: $black;
+                    height: 100vh;
+                    width: 100%;
+                    position: fixed;
+                    top: 0;
+                    right: -100%;
+                    z-index: 10;
+                    transition: right 1s ease;
+    
+                    li {
+                        &:last-child {
+                            border-left: none;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+    
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 185px;
+                                height: 1px;
+                                background-color: $lightGrey;
+                              }
+        
+                            .nav__link {
+                                padding-left: 0px;
+                                padding-top: 45px;
+                            }
+                        }
                     }
                 }
+    
+                .nav__list.active {
+                    right: 0;
+                }
+            }
+
+            .menu__button {
+                display: block;
+                z-index: 10;
             }
         }
     }

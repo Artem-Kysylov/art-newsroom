@@ -1,12 +1,17 @@
+'use client'
 // Imports 
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import { navData } from '../../navData'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { Menu, X } from 'lucide-react'
 
 export const Navbar = () => {
+  const [nav, setNav] = useState(false)
+
+  const handleNav = () => setNav(!nav)
+
   return (
     <header className={styles.header}>
       <div className='container'>
@@ -21,7 +26,7 @@ export const Navbar = () => {
           </Link>
 
           <nav>
-            <ul className={styles.nav__list}>
+            <ul className={nav ? `${styles.nav__list} ${styles.active}` : styles.nav__list}>
               {
                 navData.map((item) => (
                   <li key={item.id}>
@@ -33,8 +38,11 @@ export const Navbar = () => {
               }
             </ul>
           </nav>
-        </div>
 
+          <div className={styles.menu__button} onClick={handleNav}>
+              {nav ? (<X fill="#D9D9D9"/>) : (<Menu fill="#D9D9D9"/>)}          
+          </div>
+        </div>
       </div>
     </header>
   )
