@@ -1,0 +1,30 @@
+@import '/src/style/vars';
+
+.page {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+
+        .content__title {
+            font-size: 200px;
+            line-height: 100%;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .content__wrapper {
+            
+            .content__title {
+                font-size: 150px;
+            }
+        }
+    }
+}

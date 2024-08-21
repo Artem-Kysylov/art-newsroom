@@ -1,0 +1,32 @@
+@import '/src/style/vars';
+
+.button {
+    padding: 20px;
+    border-radius: 100px;
+    width: 100%;   
+    font-weight: 600;
+    transition: all 0.8s ease;
+
+    &:hover {
+        background: $white;
+    }
+}
+
+.filled {
+    background: $primary;
+
+    &:hover {
+        background: $white;
+    }
+}
+
+.outlined {
+    background-color: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+
+    &:hover {
+        background: $white;
+        color: $black;
+    }
+}
