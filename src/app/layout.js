@@ -27,11 +27,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ '--font-inter': inter.style.fontFamily, '--font-quattrocento': quattrocento.style.fontFamily }}>
       <body>
-        <div className="wrapper"> 
           <Navbar/>
             {children}
           <Footer/>
-        </div>
       </body>
     </html>
   );
