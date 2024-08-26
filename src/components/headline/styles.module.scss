@@ -3,10 +3,7 @@
 .headline__wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     gap: 35px;
-    width: 800px;
 
     .headline__divider {
         border: 1px solid $lightGrey;
