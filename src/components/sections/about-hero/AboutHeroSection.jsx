@@ -12,6 +12,7 @@ export const AboutHeroSection = () => {
         <div className='container'>
           <div className={styles.hero__wrapper}>
             <Headline
+              style={{ textAlign: 'center'}}
               title='About Art Newsroom'
             />
 
@@ -20,6 +21,7 @@ export const AboutHeroSection = () => {
                 src="/about-hero-1.png"
                 width={320}
                 height={376}
+                loading="lazy"
                 alt="hero-image-1"
               />
               <Image
@@ -27,12 +29,14 @@ export const AboutHeroSection = () => {
                 src="/about-hero-2.png"
                 width={494}
                 height={376}
+                loading="lazy"
                 alt="hero-image-2"
               />
               <Image
                 src="/about-hero-3.png"
                 width={223}
                 height={524}
+                loading="lazy"
                 alt="hero-image-3"
               />
             </div>

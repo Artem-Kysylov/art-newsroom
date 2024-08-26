@@ -44,8 +44,12 @@ h2 {
     font-family: var(--font-quattrocento);
     font-weight: 400;
     font-size: 70px;
-    line-height: 120%;
+    line-height: 100%;
     color: $primary;
+
+    @media(max-width: 768px) {
+        font-size: 40px;
+    }
 }
 
 h3 {

@@ -12,30 +12,29 @@ export const AboutResourceSection = () => {
                     src="/about-resource.png"
                     width={560}
                     height={485}
+                    loading="lazy"
                     alt="about-resource"
                 />
 
                 <div className={styles.content__wrapper}>
-                    <h2>Title of this section will be here</h2>
-                    <div className={styles.text__wrapper}>
-                        <p>
+                    <h2 className={styles.content__title}>Title of this section will be here</h2>
+                        <p className={styles.content__text}>
                             Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.
                         </p>
-                        <ul>
-                            <li>
+                        <ul className={styles.content__list}>
+                            <li  className={styles.content__listItem}>
                                 Lorem ipsum dolor sit amet consectetur.
                             </li>
-                            <li>
+                            <li className={styles.content__listItem}>
                                 Lorem ipsum dolor sit amet consectetur.
                             </li>
-                            <li>
+                            <li className={styles.content__listItem}>
                                 Lorem ipsum dolor sit amet consectetur.
                             </li>
-                            <li>
+                            <li className={styles.content__listItem}>
                                 Lorem ipsum dolor sit amet consectetur.
                             </li>
                         </ul>
-                    </div>
                 </div>
             </div>
         </div>
