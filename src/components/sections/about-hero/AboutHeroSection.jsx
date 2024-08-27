@@ -14,6 +14,7 @@ export const AboutHeroSection = () => {
             <Headline
               style={{ textAlign: 'center'}}
               title='About Art Newsroom'
+              level={1}
             />
 
             <div className={styles.images__wrapper}>

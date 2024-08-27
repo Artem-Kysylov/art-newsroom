@@ -1,8 +1,29 @@
 .author__section {
-    margin-top: 100px;
 
     .content__wrapper {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+
+
+        .info__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 35px;
+        }
+    }
+
+    @media(max-width: 1000px) {
+        .content__wrapper {
+            flex-direction: column-reverse;
+            gap: 35px;
+
+            .info__wrapper  {
+                text-align: center;
+                align-items: center;
+            }
+        }
     }
 }
