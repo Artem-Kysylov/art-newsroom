@@ -1,0 +1,42 @@
+export const sliderData = [
+    {
+        id: 1,
+        title: 'Literature',
+        image: '/Literature.png',
+        width: 400,
+        height: 485,
+        link: 'literature',
+    },
+    {
+        id: 2,
+        title: 'Poetry',
+        image: '/Poetry.png',
+        width: 400,
+        height: 420,
+        link: 'poetry',
+    },
+    {
+        id: 3,
+        title: 'Painting',
+        image: '/Painting.png',
+        width: 350,
+        height: 509,
+        link: 'painting',
+    },
+    {
+        id: 4,
+        title: 'Music',
+        image: '/Music.png',
+        width: 420,
+        height: 450,
+        link: 'music',
+    },
+    {
+        id: 5,
+        title: 'Sculpture',
+        image: '/Sculpture.png',
+        width: 410,
+        height: 480,
+        link: 'sculpture',
+    },
+]

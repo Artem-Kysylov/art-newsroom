@@ -9,14 +9,16 @@ import { CategorySlider } from '@/components/category-slider/CategorySlider'
 export const NewsroomCategory = () => {
   return (
     <section>
-        <div>
+        <div className={styles.wrapper}>
             <Headline
-              style={{ textAlign: 'center'}}
+              style={{ textAlign: 'center', width: 800}}
               title='Explore our Newsroom'
               level={2}
             />
-            
-            <CategorySlider/>
+
+            <div className={styles.slider}>
+              <CategorySlider/>
+            </div>            
         </div>
     </section>
   )
