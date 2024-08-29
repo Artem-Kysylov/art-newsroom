@@ -15,10 +15,7 @@ export const NewsroomCategory = () => {
               title='Explore our Newsroom'
               level={2}
             />
-
-            <div className={styles.slider}>
-              <CategorySlider/>
-            </div>            
+            <CategorySlider/>           
         </div>
     </section>
   )

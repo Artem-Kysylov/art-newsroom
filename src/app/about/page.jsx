@@ -7,6 +7,7 @@ import { AboutHeroSection } from '@/components/sections/about-hero/AboutHeroSect
 import { AboutResourceSection } from '@/components/sections/about-resource/AboutResourceSection'
 import { AboutAuthorSection } from '@/components/sections/about-author/AboutAuthorSection'
 import { NewsroomCategory } from '@/components/newsroom-category/NewsroomCategory'
+import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 const AboutUsPage = () => {
   return (
@@ -16,6 +17,7 @@ const AboutUsPage = () => {
           <AboutResourceSection/>
           <AboutAuthorSection/>
           <NewsroomCategory/>
+          <NewsletterForm/>
       </div>
     </main>
   )
