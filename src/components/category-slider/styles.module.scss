@@ -2,3 +2,33 @@
     width: 100%;
     overflow: hidden;
 }
+
+@media(max-width: 768px) {
+    .swiper-container {
+        width: 100%; /* Убедимся, что контейнер занимает всю ширину */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none; /* Используем !important для принудительного применения стиля */
+    }
+    .swiper-pagination {
+      display: block; /* Используем !important для принудительного применения стиля */
+    }
+}
+
+@media (min-width: 769px) {
+    .swiper-pagination {
+      display: none; /* Используем !important для принудительного применения стиля */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block; /* Используем !important для принудительного применения стиля */
+    }
+}
+
+@media(max-width: 400px) {
+    .swiper-container {
+        width: 100%; /* Убедимся, что контейнер занимает всю ширину */
+    }
+}
