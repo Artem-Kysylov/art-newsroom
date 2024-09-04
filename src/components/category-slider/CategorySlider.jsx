@@ -16,46 +16,27 @@ import { CategorySlide } from '@/components/category-slide/CategorySlide'
 
 export const CategorySlider = () => {
   return (
-    <div className={styles.slider}>
+    <div className={styles.slider__container}>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={30}
         slidesPerView={3.5}
         breakpoints={{
-          400: {
-            slidesPerView: 1,
+          1000: {
+            slidesPerView: 3,
             spaceBetween: 30,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: false,
           },
           768: {
             slidesPerView: 1,
             spaceBetween: 30,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: false,
           },
-          1000: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: false,
-            navigation: true,
+          400: {
+            slidesPerView: 1,
+            spaceBetween: 20,
           },
         }}
         loop={true}
-        pagination={{
-          el: '.swiper-pagination',
-          clickable: true,
-        }}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
+        navigation
         style={{
           "--swiper-navigation-color": "#fff",
         }}
@@ -76,9 +57,6 @@ export const CategorySlider = () => {
             </SwiperSlide>          
           ))
         }
-        <div className="swiper-pagination"></div>
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
       </Swiper>
     </div>
   )

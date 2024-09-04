@@ -1,0 +1,28 @@
+@import '/src/style/vars';
+
+.hero__section {
+
+    .hero__cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .descr__textWrapper {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    //    center this text by other method 
+
+        .descr__text {
+            width: 800px;
+            text-align: center;
+            font-size: 35px;
+            color: $primary;
+            padding: 35px 0 35px 0;
+            border-top: 1px solid $lightGrey;
+            border-bottom: 1px solid $lightGrey;
+        }
+    }
+}
