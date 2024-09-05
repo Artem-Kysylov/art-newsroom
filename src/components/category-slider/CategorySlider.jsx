@@ -23,7 +23,7 @@ export const CategorySlider = () => {
         slidesPerView={3.5}
         breakpoints={{
           1000: {
-            slidesPerView: 3,
+            slidesPerView: 3.5,
             spaceBetween: 30,
           },
           768: {
