@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import authorImage from '/public/author.png'
 
 
 export const AboutAuthorSection = () => {
@@ -15,11 +16,9 @@ export const AboutAuthorSection = () => {
                 </div>
 
                 <Image
-                    src="/author.png"
-                    width={530}
-                    height={750}
-                    loading="lazy"
+                    src={authorImage}
                     alt="author-artem"
+                    style={{maxWidth: '530px', maxHeight: '750px', objectFit: 'cover'}}
                 />
             </div>
         </div>

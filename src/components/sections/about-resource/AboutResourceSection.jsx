@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import aboutResourceImage from '/public/about-resource.png'
 
 export const AboutResourceSection = () => {
   return (
@@ -9,11 +10,9 @@ export const AboutResourceSection = () => {
         <div className='container'>
             <div className={styles.wrapper}>
                 <Image
-                    src="/about-resource.png"
-                    width={560}
-                    height={485}
-                    loading="lazy"
+                    src={aboutResourceImage}
                     alt="about-resource"
+                    style={{maxWidth: '560px', maxHeight: '485px', objectFit: 'cover'}}
                 />
 
                 <div className={styles.content__wrapper}>

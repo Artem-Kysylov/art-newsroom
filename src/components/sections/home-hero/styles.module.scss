@@ -1,0 +1,94 @@
+@import '/src/style/vars';
+
+.hero__section {
+
+    .hero__cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        margin-bottom: 100px;
+
+        .images__wrapper1 {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .images__wrapper2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+
+            .image__2 {
+                margin-top: 56px;
+                position: relative;
+
+                .text__circle {
+                    position: absolute;
+                    top: 200px;
+                    left: -100px;
+                    z-index: 5;
+                    animation: rotation 8s linear infinite;
+
+                    // Rotate circle animation 
+                    @keyframes rotation {
+                        0% {
+                          transform: rotate(0deg);
+                        }
+                        100% {
+                          transform: rotate(360deg);
+                        }
+                    }
+                       
+                    @-webkit-keyframes rotation {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+            }
+            .image__3 {
+                margin-top: 6px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .images__wrapper1 {
+                display: none;
+            }
+
+            .images__wrapper2  {
+                gap: 3px;
+            }
+        }
+    }
+
+    .descr__textWrapper {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    //    center this text by other method 
+
+        .descr__text {
+            width: 800px;
+            font-size: 35px;
+            color: $primary;
+            padding: 35px 0 35px 0;
+            border-top: 1px solid $lightGrey;
+            border-bottom: 1px solid $lightGrey;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .descr__textWrapper {
+            .descr__text {
+                font-size: 30px;
+            }   
+        }
+    }
+}
