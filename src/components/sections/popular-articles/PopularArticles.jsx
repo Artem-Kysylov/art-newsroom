@@ -10,12 +10,13 @@ export const PopularArticles = () => {
   return (
     <section className={styles.popular__section}>
       <div className='container'>
-        <div className={styles.big__cards}>
+        {/* <div className={styles.big__cards}>
           <BigArticleCard/>
           <BigArticleCard/>
-        </div>
+        </div> */}
 
         <div className={styles.small__cards}>
+          <SmallArticleCard/>
           <SmallArticleCard/>
           <SmallArticleCard/>
           <SmallArticleCard/>

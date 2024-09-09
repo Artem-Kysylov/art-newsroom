@@ -1,7 +1,7 @@
 @import '/src/style/vars';
 
 .article__card {
-    width: 277px;
+    width: 583px;
     cursor: pointer;
     transition: opacity, 0.8s ease;
 
@@ -20,8 +20,11 @@
         
         .card__contentTitle {
             color: $primary;
-            padding-bottom: 15px;
-            border-bottom: 1px solid $lightGrey;
+        }
+
+        .card__contentDivider {
+            border: 1px solid $lightGrey;
+            width: 100%;
         }
     
         .card__contentInfo {
@@ -35,4 +38,3 @@
         opacity: 0.5;
     }
 }
-
