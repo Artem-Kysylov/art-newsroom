@@ -20,14 +20,20 @@ export const HomeHeroSection = () => {
                     <Image
                         src={homeHero1}
                         alt='home-hero-1'
+                        layout='intrinsic'
+                        width={400}
+                        height={381}
                         placeholder='blur'
-                        style={{maxWidth: '400px', maxHeight: '381px', objectFit: 'cover'}}
+                        style={{objectFit: 'cover'}}
                     />
                     <Image
                         src={homeHero2}
                         alt='home-hero-2'
+                        layout='intrinsic'
+                        width={574}
+                        height={311}
                         placeholder='blur'
-                        style={{maxWidth: '574px', maxHeight: '311px', objectFit: 'cover'}}
+                        style={{objectFit: 'cover'}}
                     />
                 </div>
                 <Headline
@@ -38,20 +44,22 @@ export const HomeHeroSection = () => {
                 <div className={styles.images__wrapper2}>
                     <Image
                         src={homeHero3}
+                        alt='home-hero-3'
+                        layout='intrinsic'
                         width={216}
                         height={280}
-                        alt='home-hero-3'
                         placeholder='blur'
-                        style={{maxWidth: '216px', maxHeight: '280px', objectFit: 'cover'}}
+                        style={{objectFit: 'cover'}}
                     />
                     <div className={styles.image__2}>
                         <Image                            
                             src={homeHero4}
+                            layout='intrinsic'
+                            alt='home-hero-4'
                             width={501}
                             height={313}
-                            alt='home-hero-4'
                             placeholder='blur'
-                            style={{maxWidth: '501px', maxHeight: '313px', objectFit: 'cover'}}
+                            style={{objectFit: 'cover'}}
                         />
                         <Image 
                             className={styles.text__circle}                           
@@ -64,11 +72,12 @@ export const HomeHeroSection = () => {
                     <Image
                         className={styles.image__3}
                         src={homeHero5}
+                        alt='home-hero-5'
+                        layout='intrinsic'
                         width={295}
                         height={414}
-                        alt='home-hero-5'
                         placeholder='blur'
-                        style={{maxWidth: '295px', maxHeight: '414px', objectFit: 'cover'}}
+                        style={{objectFit: 'cover'}}
                     />
                 </div>
             </div>

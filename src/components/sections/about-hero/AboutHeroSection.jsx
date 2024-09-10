@@ -24,21 +24,30 @@ export const AboutHeroSection = () => {
               <Image
                 src={aboutHero1}
                 alt="hero-image-1"
+                layout='intrinsic'
+                width={320}
+                height={376}
                 placeholder='blur'
-                style={{maxWidth: '320px', maxHeight: '376px', objectFit: 'cover'}}
+                style={{objectFit: 'cover'}}
               />
               <Image
               className={styles.image__2}
                 src={aboutHero2}
                 alt="hero-image-2"
+                layout='intrinsic'
+                width={494}
+                height={376}
                 placeholder='blur'
-                style={{maxWidth: '494px', maxHeight: '376px', objectFit: 'cover'}}
+                style={{objectFit: 'cover'}}
               />
               <Image
                 src={aboutHero3}
                 alt="hero-image-3"
+                layout='intrinsic'
+                width={223}
+                height={524}
                 placeholder='blur'
-                style={{maxWidth: '223px', maxHeight: '524px', objectFit: 'cover'}}
+                style={{objectFit: 'cover'}}
               />
             </div>
           </div>

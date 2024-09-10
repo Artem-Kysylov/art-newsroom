@@ -11,7 +11,7 @@ export const NewsroomCategory = () => {
     <section>
         <div className={styles.wrapper}>
             <Headline
-              style={{ textAlign: 'center', width: 800}}
+              style={{ textAlign: 'center'}}
               title='Explore our Newsroom'
               level={2}
             />

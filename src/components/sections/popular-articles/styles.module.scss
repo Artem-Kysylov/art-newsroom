@@ -18,6 +18,10 @@
     }
 
     @media(max-width: 1250px) {
+        .big__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         .small__cards {
             grid-template-columns: repeat(auto-fill, minmax(277px, 1fr));
             grid-auto-rows: auto;
