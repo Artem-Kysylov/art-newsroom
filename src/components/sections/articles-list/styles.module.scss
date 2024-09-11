@@ -1,0 +1,19 @@
+.content__wrapper {
+    .articles__wrapper {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    @media(max-width: 1250px) {
+        .articles__wrapper {
+            grid-template-columns: repeat(auto-fill, minmax(277px, 1fr));
+            grid-auto-rows: auto;
+            grid-auto-flow: row;
+        } 
+    }
+}
