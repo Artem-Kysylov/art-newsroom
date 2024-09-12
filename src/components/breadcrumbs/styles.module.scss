@@ -1,0 +1,16 @@
+@import '/src/style/vars';
+
+.breadcrumbs__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 75px;
+
+    .breadcrumbs__link {
+        font-weight: 500;
+    }
+
+    .breadcrumbs__linkActive {
+        color: $primary;
+    }
+}
