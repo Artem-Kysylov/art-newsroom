@@ -1,31 +1,19 @@
-.popular__section {
-    .big__cards {
-        width: 100%;
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin-bottom: 30px;
-    }
-
-    .small__cards {
+.content__wrapper {
+    .articles__wrapper {
         width: 100%;
         display: grid;
         align-items: center;
         justify-content: center;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+        margin-bottom: 30px;
     }
 
     @media(max-width: 1250px) {
-        .big__cards {
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        .small__cards {
+        .articles__wrapper {
             grid-template-columns: repeat(auto-fill, minmax(277px, 1fr));
             grid-auto-rows: auto;
             grid-auto-flow: row;
-        }    
+        } 
     }
 }

@@ -12,7 +12,10 @@ export const AboutResourceSection = () => {
                 <Image
                     src={aboutResourceImage}
                     alt="about-resource"
-                    style={{maxWidth: '560px', maxHeight: '485px', objectFit: 'cover'}}
+                    layout='intrinsic'
+                    width={560}
+                    height={485}
+                    style={{objectFit: 'cover'}}
                 />
 
                 <div className={styles.content__wrapper}>

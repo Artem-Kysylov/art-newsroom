@@ -18,7 +18,10 @@ export const AboutAuthorSection = () => {
                 <Image
                     src={authorImage}
                     alt="author-artem"
-                    style={{maxWidth: '530px', maxHeight: '750px', objectFit: 'cover'}}
+                    layout='intrinsic'
+                    width={530}
+                    height={750}
+                    style={{objectFit: 'cover'}}
                 />
             </div>
         </div>

@@ -7,7 +7,9 @@
     justify-content: center;
 
     .article__card {
-        width: 277px;
+        width: 100%;
+        max-width: 583px;
+        margin: 0 auto;
         cursor: pointer;
         transition: opacity, 0.8s ease;
     
@@ -26,7 +28,6 @@
             
             .card__contentTitle {
                 color: $primary;
-                padding-bottom: 15px;
             }
     
             .card__contentDivider {

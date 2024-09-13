@@ -55,16 +55,6 @@
                 margin-top: 6px;
             }
         }
-
-        @media(max-width: 768px) {
-            .images__wrapper1 {
-                display: none;
-            }
-
-            .images__wrapper2  {
-                gap: 3px;
-            }
-        }
     }
 
     .descr__textWrapper {
@@ -84,7 +74,19 @@
         }
     }
 
+    @media(max-width: 1200px) {
+        .hero__cta {
+            .images__wrapper1 {
+                display: none;
+            }
+        }
+    }
+
     @media(max-width: 768px) {
+        .images__wrapper2  {
+            gap: 3px;
+        }
+
         .descr__textWrapper {
             .descr__text {
                 font-size: 30px;

@@ -1,26 +1,24 @@
-'use client'
-
 // Imports 
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import styles from './styles.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
-export const CategorySlide = ({ id, image, title, height, width, link }) => {
-  const router = useRouter()
+export const CategorySlide = ({ image, title, height, width, link }) => {
   
   return (
-    <div className={styles.category__slide}
-      onClick={() => router.push(`/${link}`)}
-    >
-        <Image
-            src={image}
-            width={width}
-            height={height}
-            loading="lazy"
-            alt={title}
-        />
-        <h4>{title}</h4>
-    </div>
+    <Link href={`/${link}`}>
+      <div className={styles.category__slide}>
+          <Image
+              src={image}
+              alt={title}
+              layout='intrinsic'
+              width={width}
+              height={height}
+              loading="lazy"
+          />
+          <h4>{title}</h4>
+      </div>
+    </Link>
   )
 }
