@@ -3,7 +3,7 @@ import React from 'react'
 
 // Import components 
 import { CategoryHeroSection } from '@/components/sections/category-hero/CategoryHeroSection'
-import { ArticlesList } from '@/components/sections/articles-list/ArticlesList'
+import { CategoryArticlesList } from '@/components/category-articles-list/CategoryArticlesList'
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 const CategoryPage = () => {
@@ -11,7 +11,7 @@ const CategoryPage = () => {
     <main>
       <div className='sections__wrapper'>
         <CategoryHeroSection/>
-        <ArticlesList/>
+        <CategoryArticlesList/>
         <NewsletterForm/>
       </div>
     </main>

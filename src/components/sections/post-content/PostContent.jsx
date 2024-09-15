@@ -29,10 +29,10 @@ export const PostContent = () => {
                     <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
                     <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
                     <ul className={styles.postContent__list}>
-                        <li>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li>Lorem ipsum dolor sit amet consectetur. </li>
+                        <li className={styles.postContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
+                        <li className={styles.postContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
+                        <li className={styles.postContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
+                        <li className={styles.postContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
                     </ul>
                 </div>
 
@@ -60,7 +60,7 @@ export const PostContent = () => {
                     </div>
                 </div>
 
-                <div className={styles.postContent__wrapperBottom}>
+                <div className={styles.postContent__wrapper}>
                     <h3>Title will be here</h3>
                     <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
                     <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>

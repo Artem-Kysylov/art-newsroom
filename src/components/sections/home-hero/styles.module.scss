@@ -82,11 +82,13 @@
         }
     }
 
-    @media(max-width: 768px) {
-        .images__wrapper2  {
-            gap: 3px;
+    @media(max-width: 1000px) {
+        .image__1, .image__3 {
+            display: none;
         }
+    }
 
+    @media(max-width: 1000px) {        
         .descr__textWrapper {
             .descr__text {
                 font-size: 30px;
