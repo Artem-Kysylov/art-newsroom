@@ -12,8 +12,10 @@ export const SmallArticleCard = () => {
                 <Image
                     src={articleImage}
                     alt='article-title'
-                    width={277}
-                    height={250}
+                    layout='responsive'
+                    // width={277}
+                    // height={200}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{
                         objectFit: 'cover', 
                         borderTopLeftRadius: '15px', 

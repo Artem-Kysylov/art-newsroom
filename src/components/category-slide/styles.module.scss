@@ -1,9 +1,10 @@
 @import '/src/style/vars';
 
 .category__slide {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
     cursor: pointer;
     transition: opacity, 0.8s ease;

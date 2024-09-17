@@ -14,7 +14,6 @@ export const PopularArticles = () => {
           <BigArticleCard/>
           <BigArticleCard/>
         </div>
-
         <ArticlesList/>
       </div>
     </section>

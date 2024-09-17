@@ -12,9 +12,9 @@ export const BigArticleCard = () => {
                     <Image
                         src={bigArticleImg}
                         alt='article-title'
-                        layout="responsive"
-                        width={583}
-                        height={400}
+                        layout='responsive'
+                        // width={583}
+                        // height={400}
                         sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         style={{
                             objectFit: 'cover', 

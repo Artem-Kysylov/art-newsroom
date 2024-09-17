@@ -8,17 +8,17 @@ export const CategorySlide = ({ image, title, height, width, link }) => {
   
   return (
     <Link href={`/${link}`}>
-      <div className={styles.category__slide}>
-          <Image
-              src={image}
-              alt={title}
-              layout='intrinsic'
-              width={width}
-              height={height}
-              loading="lazy"
-          />
-          <h4>{title}</h4>
-      </div>
+        <div className={styles.category__slide}>
+            <Image
+                src={image}
+                alt={title}
+                layout='intrinsic'
+                width={width}
+                height={height}
+                loading="lazy"
+            />
+            <h4>{title}</h4>
+        </div>
     </Link>
   )
 }
