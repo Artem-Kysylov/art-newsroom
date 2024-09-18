@@ -3,7 +3,7 @@ import React from 'react'
 
 // Import components
 import { PostHeroSection } from '@/components/sections/post-hero/PostHeroSection' 
-import { PostContent } from '@/components/sections/post-content/PostContent'
+import { ArticleContent } from '@/components/sections/article-content/ArticleContent'
 import { InterestingArticles } from '@/components/sections/interesting-articles/InterestingArticles'
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
@@ -12,7 +12,7 @@ const PostPage = () => {
     <main>
       <div className='sections__wrapper'>
         <PostHeroSection/>
-        <PostContent/>
+        <ArticleContent/>
         <InterestingArticles/>
         <NewsletterForm/>
       </div>

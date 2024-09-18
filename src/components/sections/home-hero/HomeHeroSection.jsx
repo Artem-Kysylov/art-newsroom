@@ -43,6 +43,7 @@ export const HomeHeroSection = () => {
                 />
                 <div className={styles.images__wrapper2}>
                     <Image
+                        className={styles.image__1}
                         src={homeHero3}
                         alt='home-hero-3'
                         layout='intrinsic'

@@ -3,26 +3,18 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 // Import components 
-import { SmallArticleCard } from '@/components/small-article-card/SmallArticleCard'
-import { BigArticleCard } from '@/components/big-article-card/BigArticleCard'
+import { ArticleCard } from '@/components/article-card/ArticleCard'
+import { ArticlesList } from '../articles-list/ArticlesList'
 
 export const PopularArticles = () => {
-  return (
+  return ( 
     <section className={styles.popular__section}>
       <div className='container'>
         <div className={styles.big__cards}>
-          <BigArticleCard/>
-          <BigArticleCard/>
+          <ArticleCard/>
+          <ArticleCard/>
         </div>
-
-        <div className={styles.small__cards}>
-          <SmallArticleCard/>
-          <SmallArticleCard/>
-          <SmallArticleCard/>
-          <SmallArticleCard/>
-          <SmallArticleCard/>
-          <SmallArticleCard/>
-        </div>
+        <ArticlesList/>
       </div>
     </section>
   )

@@ -21,6 +21,7 @@ export const CategorySlider = () => {
         modules={[Navigation, Pagination]}
         spaceBetween={30}
         slidesPerView={3.5}
+        speed={1200}
         breakpoints={{
           1000: {
             slidesPerView: 3.5,

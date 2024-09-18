@@ -8,6 +8,11 @@
 
     .breadcrumbs__link {
         font-weight: 500;
+        transition: opacity 0.8s ease;
+
+        &:hover {
+            opacity: 0.5;
+        }
     }
 
     .breadcrumbs__linkActive {
