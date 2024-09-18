@@ -1,7 +1,7 @@
 @import '/src/style/vars';
 
-.postContent__section {
-    .postContent__container {
+.articleContent__section {
+    .articleContent__container {
         max-width: 800px;
         padding: 0 10px;
         margin: 0 auto;
@@ -9,16 +9,16 @@
         flex-direction: column;
         gap: 75px;
 
-        .postContent__wrapper {
+        .articleContent__wrapper {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 30px;
 
-            .postContent__list {
+            .articleContent__list {
                 list-style: inside;
 
-                .postContent__listItem {
+                .articleContent__listItem {
 
                     &:not(:last-child) {
                         margin-bottom: 20px;
@@ -26,7 +26,7 @@
                 }
             }
 
-            .postContent__divider {
+            .articleContent__divider {
                 border: 1px solid $lightGrey;
                 width: 100%;
             }

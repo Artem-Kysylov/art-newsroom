@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import articleImage from '/public/article-image.png'
 
-export const SmallArticleCard = () => {
+export const ArticleCard = () => {
   return (
     <Link href={'/'} className={styles.article__linkContainer}>
         <article className={styles.article__card}>
@@ -13,8 +13,6 @@ export const SmallArticleCard = () => {
                     src={articleImage}
                     alt='article-title'
                     layout='responsive'
-                    // width={277}
-                    // height={200}
                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{
                         objectFit: 'cover', 
