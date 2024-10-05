@@ -66,7 +66,7 @@ export const ArticleContent = () => {
 
                     <Button
                         text='Share this article'
-                        type='outlined'
+                        buttonType='outlined'
                     />
                 </div>
         </div>
