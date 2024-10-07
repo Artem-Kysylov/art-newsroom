@@ -1,24 +1,45 @@
 'use client'
 
 // Imports 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.scss'
 
 // Import components 
 import { Button } from '@/components/button/Button'
 import { Input } from '@/components/input/Input'
 import { Headline } from '@/components/headline/Headline'
+import { MessageCard } from '@/components/message-card/MessageCard'
 
 export const NewsletterForm = () => {
+    // All states 
     const [email, setEmail] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    const [successMessage, setSuccessMessage] = useState(false)
 
     const apiToken = process.env.NEXT_PUBLIC_API_TOKEN
+
+    // Handlechange function for input 
+    const handleChange = (e) => {
+        setEmail(e.target.value.toLowerCase())
+    }
+
+    // Function to show message card 
+    const showMessageCard = () => {
+        setSuccessMessage(true)
+    }
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setSuccessMessage(false)
+        }, 3000)
+        return () => clearTimeout(timer)
+    }, [successMessage])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setEmail('')
         setErrorMessage('')
+        setSuccessMessage(false)
 
         try {
             const response = await fetch(
@@ -43,13 +64,18 @@ export const NewsletterForm = () => {
                 setErrorMessage(data?.message)
                 setErrorMessage('Please enter a valid email address')
                 return
-            }
+            } showMessageCard()
         } catch (error) {
             console.error(error)
         }
     }
+
   return (
     <section className={styles.newsletter__section}>
+        {successMessage &&             
+            <MessageCard
+                title='You are successfully subscribed to our news'
+            />}
         <div className='container'>
             <div className={styles.wrapper}>
                 <Headline
@@ -64,7 +90,7 @@ export const NewsletterForm = () => {
                     <div className={styles.input__wrapper}>
                         <Input 
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={handleChange}
                         />
                         {errorMessage && <p className={styles.form__error}>{errorMessage}</p>}
                     </div>
