@@ -15,7 +15,7 @@ const NotFound = () => {
             <Link href='/'>
                 <Button
                     text='Home page'
-                    type='filled'
+                    buttonType='filled'
                     style={{ width: '333px'}}
                 />
             </Link>
