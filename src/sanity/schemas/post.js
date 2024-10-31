@@ -16,16 +16,37 @@ export const post = {
             type:'slug',
             options: { 
                 source: 'title',
-                maxLength: 96,
-                isUnique: true, 
+                maxLength: 96, 
             },
             validation: (rule) => rule.required().error('Required'),
+        },
+        {
+            name: 'category',
+            title: 'Category',
+            type: 'reference',
+            to: [{ type: 'category' }],
+            validation: (rule) => rule.required().error('Category is required')
         },
         {
             name: 'publishedAt',
             title: 'Published At',
             type: 'datetime',
             initialValue: () => new Date().toISOString(),
+        },
+        {
+            name: 'mainImage',
+            title: 'Main Image',
+            type: 'image',
+            options: {
+                hotspot: true,
+            },
+            fields: [
+                {
+                    name: 'alt',
+                    title: 'Alt Text',
+                    type: 'string',
+                },
+            ],
         },
         {
             name: 'author',
@@ -55,9 +76,9 @@ export const post = {
                             name: 'alt',
                             title: 'Alt',
                         },
-                    ]
+                    ],
                 },
             ]
         },
-    ]
+    ],
 }
