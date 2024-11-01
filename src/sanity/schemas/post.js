@@ -5,8 +5,8 @@ export const post = {
 
     fields: [
         {
-            name: 'post',
-            title: 'Post',
+            name: 'title',
+            title: 'Title',
             type: 'string',
             validation: (rule) => rule.required().error('Required'),
         },
@@ -55,18 +55,50 @@ export const post = {
             validation: (rule) => rule.required().error('Required'),
         },
         {
-            name: 'excerpt',
-            title: 'Excerpt',
-            type: 'text',
-            validation: (rule) => rule.max(200).error('Max 200 characters'),
-        },
-        {
             name: 'body',
             title: 'Body',
             type: 'array',
             of: [
                 { 
-                    type: 'block'
+                    type: 'block',
+                    styles: [
+                        { title: 'Normal', value: 'normal'},
+                        { title: 'Quote', value: 'blockquote'},
+                    ],
+                    lists: [{ title: 'Bullet', value: 'bullet' }],
+                    marks: {
+                        decorators: [{ title: 'Emphasis', value: 'em'}],
+                    }
+                },
+                {
+                    name: 'quote',
+                    title: 'Quote',
+                    type: 'object',
+                    fields: [
+                        {
+                            name: 'text',
+                            title: 'Quote text',
+                            type: 'text',
+                            validation: (rule) => rule.required().error('Quote text is required'),
+                        },
+                        {
+                            name: 'author',
+                            title: 'Author',
+                            type: 'string',
+                        },
+                    ],
+                    preview: {
+                        select: {
+                            title: 'text',
+                            subtitle: 'author',
+                        },
+                        prepare({ title, subtitle }) {
+                            return {
+                                title: `'${title}'`,
+                                subtitle: subtitle ? `- ${subtitle}` : '',
+                            }
+                        },
+                    },
                 },
                 { 
                     type: 'image',
@@ -78,7 +110,7 @@ export const post = {
                         },
                     ],
                 },
-            ]
+            ],
         },
     ],
 }
