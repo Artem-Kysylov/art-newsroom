@@ -18,6 +18,7 @@ const getPosts = async () => {
         publishedAt,
         author,
         category,
+        mainImage,
       }
   `
   const data = await client.fetch(query)
@@ -32,7 +33,7 @@ export default async function Home() {
   <main>
     <div className='sections__wrapper'>
       <HomeHeroSection/>
-      <PopularArticles/>
+      <PopularArticles posts={posts}/>
       <NewsroomCategory/>
       <NewsletterForm/>
     </div>

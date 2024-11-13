@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import articleImage from '/public/article-image.png'
 
-export const ArticleCard = () => {
+export const ArticleCard = ({ title, slug, publishedAt, author, category, mainImage }) => {
   return (
     <Link href={'/'} className={styles.article__linkContainer}>
         <article className={styles.article__card}>
