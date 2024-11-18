@@ -11,8 +11,8 @@ export const ArticlesList = ({ posts }) => {
         <div className={styles.articles__wrapper}>
           {posts?.length > 0 && posts?.map((post) => (
             <ArticleCard
-              key={post?._id}
-              post={post}
+              key={post?.slug.current}
+              {...post}
             />
           ))}
         </div>

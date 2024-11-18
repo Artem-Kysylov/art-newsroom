@@ -12,15 +12,25 @@ import { PopularArticles } from '@/components/sections/popular-articles/PopularA
 // Fetch all our posts 
 const getPosts = async () => {
   const query = `
-  * [_type == 'post'] {
-        title,
-        slug,
-        publishedAt,
-        author,
-        category,
-        mainImage,
+  *[_type == "post"] {
+    title,
+    slug,
+    mainImage {
+      asset -> {
+        url,
+        metadata {
+          dimensions {
+            width,
+            height
+          }
+        }
       }
-  `
+    },
+    publishedAt,
+    author,
+    category
+  }
+`
   const data = await client.fetch(query)
   return data
 }

@@ -3,15 +3,24 @@ import React from 'react'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { urlFor } from '@/sanity/lib/image'
 
 export const ArticleCard = ({ title, slug, publishedAt, author, category, mainImage }) => {
+    const imageUrl = mainImage ? urlFor(mainImage).url() : null
+    const dimensions = mainImage?.asset?.metadata?.dimensions
+    const width = dimensions?.width || 800
+    const height = dimensions?.width || 450
+
   return (
     <Link href='/' className={styles.article__linkContainer}>
+        {/* {`/${category}/${post.slug.current}`} */}
         <article className={styles.article__card}>
-            {mainImage?.asset?.url && 
+            {imageUrl && 
                 <Image
-                    src={mainImage.asset.url}
+                    src={imageUrl}
                     alt={title}
+                    width={width}
+                    height={height}
                     layout='responsive'
                     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{
