@@ -8,6 +8,7 @@ import { InterestingArticles } from '@/components/sections/interesting-articles/
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 const PostPage = () => {
+  
   return (
     <main>
       <div className='sections__wrapper'>

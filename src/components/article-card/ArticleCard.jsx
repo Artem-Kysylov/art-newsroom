@@ -12,8 +12,7 @@ export const ArticleCard = ({ title, slug, publishedAt, author, category, mainIm
     const height = dimensions?.width || 450
 
   return (
-    <Link href='/' className={styles.article__linkContainer}>
-        {/* {`/${category}/${post.slug.current}`} */}
+    <Link href={`/${category?.slug?.current}/${slug?.current}`} className={styles.article__linkContainer}>
         <article className={styles.article__card}>
             {imageUrl && 
                 <Image
@@ -36,7 +35,7 @@ export const ArticleCard = ({ title, slug, publishedAt, author, category, mainIm
                 <h4 className={styles.card__contentTitle}>{title}</h4>
                 <span className={styles.card__contentDivider}></span>
                 <div className={styles.card__contentInfo}>
-                    <p><span>Posted:</span>{publishedAt}</p>
+                    <p><span>Posted:</span>{publishedAt.split('T')[0]}</p>
                     <p><span>Author:</span>{author}</p>
                 </div>
             </div>
