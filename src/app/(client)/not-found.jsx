@@ -1,6 +1,6 @@
 // Imports 
 import React from 'react'
-import styles from '../style/not-found.module.scss'
+import styles from './not-found.module.scss'
 import Link from 'next/link'
 
 // Import components 

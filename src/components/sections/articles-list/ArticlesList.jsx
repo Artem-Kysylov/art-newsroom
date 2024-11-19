@@ -5,19 +5,16 @@ import styles from './styles.module.scss'
 // Import components 
 import { ArticleCard } from '@/components/article-card/ArticleCard'
 
-export const ArticlesList = () => {
+export const ArticlesList = ({ posts }) => {
   return (
     <>
         <div className={styles.articles__wrapper}>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
-          <ArticleCard/>
+          {posts?.length > 0 && posts?.map((post) => (
+            <ArticleCard
+              key={post?.slug.current}
+              {...post}
+            />
+          ))}
         </div>
     </>
   )
