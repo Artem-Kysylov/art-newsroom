@@ -1,7 +1,8 @@
 // Imports 
 import React from 'react'
 import { client } from '@/sanity/lib/client'
-import { Metadata } from "next";
+import { Metadata } from "next"
+import { NotFound } from '../../not-found'
 
 // Repo link
 // https://github.com/stefandjikic/next-cms-blog
@@ -40,11 +41,12 @@ const getPost = async () => {
        _id,
        "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
        body,
+       quote,
+       image,
     }
   `
-
-  const post = await client.fetch(query)
-  return post
+  const postData = await client.fetch(query)
+  return postData
 }
 
 // Generate Metadata 
@@ -78,12 +80,18 @@ export const generateMetadata = async ({ params }) => {
   }
 }
 
-const PostPage = () => {  
+const PostPage = async ({ params }) => {
+  const post = await getPost(params?.slug)
+
+  if(!post) {
+    <NotFound/>
+  }
+
   return (
     <main>
       <div className='sections__wrapper'>
-        <PostHeroSection/>
-        <ArticleContent/>
+        <PostHeroSection post={post}/>
+        <ArticleContent post={post}/>
         <InterestingArticles/>
         <NewsletterForm/>
       </div>
