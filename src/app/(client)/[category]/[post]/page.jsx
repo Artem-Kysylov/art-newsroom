@@ -14,7 +14,7 @@ import { InterestingArticles } from '@/components/sections/interesting-articles/
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 // Get posts 
-const getPost = async () => {
+const getPost = async (slug) => {
   const query = `
     *[_type == "post" && slug.current == "${slug}"][0] {
       title,
@@ -28,7 +28,8 @@ const getPost = async () => {
               height,
             }
           }
-        }
+        },
+        alt
       }
       publishedAt,
       author,
@@ -41,13 +42,16 @@ const getPost = async () => {
        _id,
        "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
        body,
-       quote,
-       image,
+       "quotes": body[_type == "quote"],
+       "images": body[_type == "image"].
     }
   `
   const postData = await client.fetch(query)
   return postData
 }
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+const pageUrl = `${baseUrl}/${params?.slug}`
 
 // Generate Metadata 
 export const generateMetadata = async ({ params }) => {
@@ -64,14 +68,16 @@ export const generateMetadata = async ({ params }) => {
       description: post.title,
       type: "article",
       locale: "en_US",
-      url: '',
+      url: pageUrl,
       siteName: "Art Newsroom",
       images: [
         {
-          url: post.image,
+          url: post.mainImage?.asset.url,
         },
         {
-          url: urlForImage(post?.body?.find((b) => b._type === "image")).width(1200).height(630).url(),
+          url: post.body?.find((b) => b._type === 'image') 
+          ? urlForImage(post?.body?.find((b) => b._type === "image")).width(1200).height(630).url()
+          : '',
           width: 1200,
           height: 630,
         },
@@ -84,7 +90,7 @@ const PostPage = async ({ params }) => {
   const post = await getPost(params?.slug)
 
   if(!post) {
-    <NotFound/>
+    return <NotFound/>
   }
 
   return (
