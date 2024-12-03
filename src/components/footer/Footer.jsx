@@ -1,7 +1,6 @@
 // Imports 
 import React from 'react'
 import styles from './styles.module.scss'
-import { navData } from '../../navData'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -21,7 +20,7 @@ export const Footer = () => {
             </Link>
 
             <nav>
-            <ul className={styles.footer__navList}>
+            {/* <ul className={styles.footer__navList}>
               {
                 navData.map((item) => (
                   <li key={item.id}>
@@ -31,7 +30,7 @@ export const Footer = () => {
                   </li>
                 ))
               }
-            </ul>
+            </ul> */}
           </nav>
 
           <span className={styles.footer__copy}>Copyright. All rights reserved</span>
