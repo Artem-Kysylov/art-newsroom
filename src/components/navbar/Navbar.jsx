@@ -52,18 +52,14 @@ export const Navbar = () => {
 
           <nav>
             <ul className={nav ? `${styles.nav__list} ${styles.active}` : styles.nav__list}>
-              { navData.length > 0 ? (
-                  navData.map((item) => (
+              {(
+                navData.map((item) => (
                     <li key={item.id}>
                       <Link href={item.link}>
                         <p className={styles.nav__link}>{item.title}</p>
                       </Link>
                     </li>
-                  ))
-              ) : (
-                <li>
-                  <p className={styles.nav__link}>Loading...</p>
-                </li>
+                ))
               )}
             </ul>
           </nav>

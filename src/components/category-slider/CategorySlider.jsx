@@ -4,7 +4,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { sliderData } from '@/sliderData'
+import { sliderData } from '@/localSliderData'
 
 // Import Swiper styles
 import 'swiper/scss'
