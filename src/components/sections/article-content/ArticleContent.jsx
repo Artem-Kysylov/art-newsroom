@@ -7,13 +7,15 @@ import Image from 'next/image'
 import { Button } from '@/components/button/Button'
 import { ArticleQuote } from '@/components/article-quote/ArticleQuote'
 
-export const ArticleContent = () => {
+export const ArticleContent = ({ title, mainImage }) => {
+    const imageUrl = mainImage ? urlFor(mainImage).url() : null
+    
   return (
     <section className={styles.articleContent__section}>
         <div className={styles.articleContent__container}>
                 <Image
-                    src='/article-content-img-1.png'
-                    alt='image'
+                    src={imageUrl}
+                    alt={title}
                     width={800}
                     height={500}
                     layout='responsive'

@@ -43,22 +43,23 @@ const getPost = async (slug) => {
        "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
        body,
        "quotes": body[_type == "quote"],
-       "images": body[_type == "image"].
+       "images": body[_type == "image"],
     }
   `
   const postData = await client.fetch(query)
   return postData
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-const pageUrl = `${baseUrl}/${params?.slug}`
 
 // Generate Metadata 
 export const generateMetadata = async ({ params }) => {
-  const post = await getPost(params?.slug)
+  const post = await getPost(params?.post)
   if (!post) {
     return
   }
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const pageUrl = `${baseUrl}/${params?.category}/${params?.post}`
 
   return {
     title: post.title,
