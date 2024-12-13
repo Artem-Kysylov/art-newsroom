@@ -11,6 +11,7 @@ export const ArticleCard = ({ title, slug, publishedAt, author, category, mainIm
     const width = dimensions?.width || 800
     const height = dimensions?.width || 450
 
+
   return (
     <Link href={`/${category?.slug?.current}/${slug?.current}`} className={styles.article__linkContainer}>
         <article className={styles.article__card}>

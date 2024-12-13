@@ -9,7 +9,7 @@ import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 export const generateStaticParams = async () => {
   const categories = await client.fetch(`
-    *[_type == 'category] {
+    *[_type == "category"] {
       title,
       slug {
         current
@@ -22,7 +22,7 @@ export const generateStaticParams = async () => {
 }
 
 export const CategoryPage = async ({ params }) => {
-  const { category } = params
+  const { category } = await params
 
   const posts = await client.fetch(`
     *[_type == "post" && category->slug.current == $category] {

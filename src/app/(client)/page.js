@@ -21,14 +21,19 @@ const getPosts = async () => {
         metadata {
           dimensions {
             width,
-            height
+            height,
           }
         }
       }
     },
     publishedAt,
     author,
-    category
+    category -> {
+      title,
+      slug {
+        current,
+      }
+    }
   }
 `
   const data = await client.fetch(query)

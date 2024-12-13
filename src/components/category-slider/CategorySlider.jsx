@@ -1,10 +1,10 @@
 'use client'
 // Imports 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.scss'
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { sliderData } from '@/sliderData'
+import { getSliderCategories } from '@/sanity/lib/api'
 
 // Import Swiper styles
 import 'swiper/scss'
@@ -14,7 +14,22 @@ import 'swiper/scss/pagination';
 // Import components 
 import { CategorySlide } from '@/components/category-slide/CategorySlide'
 
+
 export const CategorySlider = () => {
+  const [categorySliderData, setCategorySliderData] = useState([])
+
+  useEffect(() => {
+    const fetchSliderCategories = async () => {
+      try {
+        const categories = await getSliderCategories()
+        setCategorySliderData(categories)
+      } catch (error) {
+        console.error('Error fetching categories', error)
+      }
+    }
+    fetchSliderCategories()
+  }, [])
+
   return (
     <div className={styles.slider__container}>
       <Swiper
@@ -46,7 +61,7 @@ export const CategorySlider = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         {
-          sliderData.map((slide) => (
+          categorySliderData.map((slide) => (
             <SwiperSlide key={slide.id}>
               <CategorySlide              
                 image={slide.image}
