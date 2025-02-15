@@ -50,8 +50,11 @@ export const Navbar = () => {
             />
           </Link>
 
-          <nav>
-            <ul className={nav ? `${styles.nav__list} ${styles.active}` : styles.nav__list}>
+          <nav className={nav ? `${styles.nav} ${styles.active}` : styles.nav}>
+            <div className={styles.menu__closeButton} onClick={handleNav}>
+                <X fill="#D9D9D9"/>
+            </div>
+            <ul className={styles.nav__list}>
               {(
                 navData.map((item) => (
                     <li key={item.id}>
@@ -65,7 +68,7 @@ export const Navbar = () => {
           </nav>
 
           <div className={styles.menu__button} onClick={handleNav}>
-              {nav ? (<X fill="#D9D9D9"/>) : (<Menu fill="#D9D9D9"/>)}          
+            <Menu fill="#D9D9D9"/>
           </div>
         </div>
       </div>

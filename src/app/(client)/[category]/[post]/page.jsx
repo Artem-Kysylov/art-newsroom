@@ -10,52 +10,58 @@ import { NotFound } from '../../not-found'
 // Import components
 import { PostHeroSection } from '@/components/sections/post-hero/PostHeroSection' 
 import { ArticleContent } from '@/components/sections/article-content/ArticleContent'
-import { InterestingArticles } from '@/components/sections/interesting-articles/InterestingArticles'
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 // Get posts 
+// Get posts 
 const getPost = async (slug) => {
-  const query = `
-    *[_type == "post" && slug.current == "${slug}"][0] {
-      title,
-      slug,
-      mainImage {
-        asset -> {
-          url,
-          metadata {
-            dimensions {
-              width,
-              height,
+  try {
+    const query = `
+      *[_type == "post" && slug.current == "${slug}"][0] {
+        title,
+        slug,
+        mainImage {
+          asset -> {
+            url,
+            metadata {
+              dimensions {
+                width,
+                height,
+              }
             }
+          },
+          alt
+        },
+        publishedAt,
+        author,
+        category -> {
+          title,
+          slug {
+            current,
           }
         },
-        alt
+        _id,
+        "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
+        body,
+        "quotes": body[_type == "quote"],
+        "images": body[_type == "image"],
       }
-      publishedAt,
-      author,
-      category -> {
-        title,
-        slug {
-          current,
-        }
-      },
-       _id,
-       "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
-       body,
-       "quotes": body[_type == "quote"],
-       "images": body[_type == "image"],
-    }
-  `
-  const postData = await client.fetch(query)
-  return postData
-}
+    `;
+
+    const postData = await client.fetch(query);
+    return postData;
+  } catch (error) {
+    console.error("Error fetching post data:", error)
+    throw error
+  }
+};
 
 
 // Generate Metadata 
 export const generateMetadata = async ({ params }) => {
   const post = await getPost(params?.post)
   if (!post) {
-    return
+    return 
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
@@ -99,7 +105,6 @@ const PostPage = async ({ params }) => {
       <div className='sections__wrapper'>
         <PostHeroSection post={post}/>
         <ArticleContent post={post}/>
-        <InterestingArticles/>
         <NewsletterForm/>
       </div>
     </main>
