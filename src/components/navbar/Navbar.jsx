@@ -58,7 +58,7 @@ export const Navbar = () => {
               {(
                 navData.map((item) => (
                     <li key={item.id}>
-                      <Link href={item.link}>
+                      <Link href={item.link} onClick={handleNav}>
                         <p className={styles.nav__link}>{item.title}</p>
                       </Link>
                     </li>

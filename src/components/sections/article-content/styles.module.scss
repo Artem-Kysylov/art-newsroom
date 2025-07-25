@@ -59,4 +59,12 @@
       }
     }
   }
+
+  @media(max-width: 768px) {
+    .articleContent__container {
+      .articleContent__wrapper {
+        padding: 20px 0;
+      }
+    }
+  }
 }
