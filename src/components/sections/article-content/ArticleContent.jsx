@@ -43,26 +43,28 @@ export const ArticleContent = ({ post }) => {
             {showMessage && (
                 <MessageCard title="Link copied to clipboard" />
             )}
-            <div className={styles.articleContent__container}>
-                {post.mainImage && (
-                    <AdaptiveImage 
-                        image={post.mainImage}
-                        alt={post.mainImage.alt || post.title}
-                        rounded={true}
-                        priority={true}
-                    />
-                )}
-                
-                <div className={styles.articleContent__wrapper}>
-                    {post.body && <PortableText value={post.body} />}
+            <div className="container">
+                <div className={styles.articleContent__container}>
+                    {post.mainImage && (
+                        <AdaptiveImage 
+                            image={post.mainImage}
+                            alt={post.mainImage.alt || post.title}
+                            rounded={true}
+                            priority={true}
+                        />
+                    )}
                     
-                    <div className={styles.articleContent__divider}></div>
-                    
-                    <Button
-                        text='Share this article'
-                        buttonType='outlined'
-                        onClick={handleShareClick}
-                    />
+                    <div className={styles.articleContent__wrapper}>
+                        {post.body && <PortableText value={post.body} />}
+                        
+                        <div className={styles.articleContent__divider}></div>
+                        
+                        <Button
+                            text='Share this article'
+                            buttonType='outlined'
+                            onClick={handleShareClick}
+                        />
+                    </div>
                 </div>
             </div>
         </section>
