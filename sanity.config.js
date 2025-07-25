@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * This configuration is used to for the Sanity Studio that’s mounted on the `\src\app\studio\[[...tool]]\page.jsx` route
+ * This configuration is used to for the Sanity Studio that's mounted on the `\src\app\studio\[[...tool]]\page.jsx` route
  */
 
 import {visionTool} from '@sanity/vision'
@@ -25,4 +25,22 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+  cors: {
+    credentials: true,
+    origin: [
+      'http://localhost:3000',
+      'https://art-newsroom.vercel.app',
+      'https://*.vercel.app'
+    ]
+  },
+  api: {
+    cors: {
+      credentials: true,
+      origin: [
+        'http://localhost:3000',
+        'https://art-newsroom.vercel.app',
+        'https://*.vercel.app'
+      ]
+    }
+  }
 })
