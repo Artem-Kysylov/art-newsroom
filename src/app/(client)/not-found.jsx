@@ -6,7 +6,7 @@ import Link from 'next/link'
 // Import components 
 import { Button } from '@/components/button/Button'
 
-const NotFound = () => {
+export const NotFound = () => {
   return (
     <section className={styles.page}>
         <div className={styles.content__wrapper}>
