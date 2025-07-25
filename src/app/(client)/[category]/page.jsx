@@ -30,6 +30,12 @@ export const CategoryPage = async ({ params }) => {
      slug {
        current
      },
+     category -> {
+       title,
+       slug {
+         current
+       }
+     },
      mainImage,
      publishedAt,
      author
