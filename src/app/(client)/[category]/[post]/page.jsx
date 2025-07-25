@@ -1,16 +1,12 @@
 // Imports 
 import React from 'react'
 import { client } from '@/sanity/lib/client'
-import { Metadata } from "next"
-import { NotFound } from '../../not-found'
-
-// Repo link
-// https://github.com/stefandjikic/next-cms-blog
+import NotFound from '../../not-found'
+import { urlFor } from '@/sanity/lib/image' 
 
 // Import components
 import { PostHeroSection } from '@/components/sections/post-hero/PostHeroSection' 
 import { ArticleContent } from '@/components/sections/article-content/ArticleContent'
-import { InterestingArticles } from '@/components/sections/interesting-articles/InterestingArticles'
 import { NewsletterForm } from '@/components/newsletter-form/NewsletterForm'
 
 // Get posts 
@@ -25,41 +21,45 @@ const getPost = async (slug) => {
           metadata {
             dimensions {
               width,
-              height,
+              height
             }
           }
         },
         alt
-      }
+      },
       publishedAt,
       author,
       category -> {
         title,
         slug {
-          current,
+          current
         }
       },
        _id,
        "headings": body[style in ["h2", "h3", "h4", "h5", "h6"]],
        body,
        "quotes": body[_type == "quote"],
-       "images": body[_type == "image"],
+       "images": body[_type == "image"]
     }
   `
   const postData = await client.fetch(query)
   return postData
 }
 
-
 // Generate Metadata 
 export const generateMetadata = async ({ params }) => {
-  const post = await getPost(params?.post)
+  const resolvedParams = await params
+  const post = await getPost(resolvedParams?.post)
+  
   if (!post) {
-    return
+    return {
+      title: 'Post Not Found',
+      description: 'The requested post could not be found.'
+    }
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-  const pageUrl = `${baseUrl}/${params?.category}/${params?.post}`
+  const pageUrl = `${baseUrl}/${resolvedParams?.category}/${resolvedParams?.post}`
 
   return {
     title: post.title,
@@ -77,7 +77,7 @@ export const generateMetadata = async ({ params }) => {
         },
         {
           url: post.body?.find((b) => b._type === 'image') 
-          ? urlForImage(post?.body?.find((b) => b._type === "image")).width(1200).height(630).url()
+          ? urlFor(post?.body?.find((b) => b._type === "image")).width(1200).height(630).url()
           : '',
           width: 1200,
           height: 630,
@@ -88,7 +88,8 @@ export const generateMetadata = async ({ params }) => {
 }
 
 const PostPage = async ({ params }) => {
-  const post = await getPost(params?.slug)
+  const resolvedParams = await params
+  const post = await getPost(resolvedParams?.post) 
 
   if(!post) {
     return <NotFound/>
@@ -99,7 +100,6 @@ const PostPage = async ({ params }) => {
       <div className='sections__wrapper'>
         <PostHeroSection post={post}/>
         <ArticleContent post={post}/>
-        <InterestingArticles/>
         <NewsletterForm/>
       </div>
     </main>

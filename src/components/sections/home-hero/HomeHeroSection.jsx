@@ -84,7 +84,7 @@ export const HomeHeroSection = () => {
             </div>
 
             <div className={styles.descr__textWrapper}>
-                <h3 className={styles.descr__text}>Lorem ipsum dolor sit amet consectetur. Arcu sit nulla consequat purus mauris accumsan ultricies praesent interdum. Ut non donec sagittis at et porta sit non. Turpis eget ornare massa lectus interdum non. Pellentesque sed at id ullamcorper vitae quam diam tristique etiam.</h3>
+                <h3 className={styles.descr__text}>Art Newsroom is a space where literature, painting, music, and poetry meet. Here, Shakespeare and Akhmatova come to life, Baroque melodies echo, and Orwell’s ideas are explored. We delve into the past to better understand the present — and find inspiration in the timeless power of art.</h3>
             </div>            
         </div>
     </section>

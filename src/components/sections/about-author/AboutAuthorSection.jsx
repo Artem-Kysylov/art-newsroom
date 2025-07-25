@@ -12,7 +12,8 @@ export const AboutAuthorSection = () => {
             <div className={styles.content__wrapper}>
                 <div className={styles.info__wrapper}>
                     <h2>About Author Artem</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere.</p>
+                    <p>Hi, I’m Artem — the creator behind Art Newsroom. I started this blog as a personal project and a way to build my portfolio, choosing a topic that has always fascinated me: the history of world art. From ancient poetry to modern literature, from classical music to baroque painting — I wanted to explore it all in one place.
+I hope you enjoy the content and discover something new and inspiring along the way.</p>
                 </div>
 
                 <Image

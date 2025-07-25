@@ -1,77 +1,70 @@
+'use client'
+
 // Imports 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.scss'
-import Image from 'next/image'
 
 // Import components 
 import { Button } from '@/components/button/Button'
-import { ArticleQuote } from '@/components/article-quote/ArticleQuote'
+import { PortableText } from '@/components/portable-text/PortableText'
+import { MessageCard } from '@/components/message-card/MessageCard'
+import { AdaptiveImage } from '@/components/adaptive-image/AdaptiveImage'
 
-export const ArticleContent = ({ title, mainImage }) => {
-    const imageUrl = mainImage ? urlFor(mainImage).url() : null
+export const ArticleContent = ({ post }) => {
+    const [showMessage, setShowMessage] = useState(false)
     
-  return (
-    <section className={styles.articleContent__section}>
-        <div className={styles.articleContent__container}>
-                <Image
-                    src={imageUrl}
-                    alt={title}
-                    width={800}
-                    height={500}
-                    layout='responsive'
-                    style={{
-                        objectFit: 'cover', 
-                        borderTopLeftRadius: '20px', 
-                        borderTopRightRadius: '20px', 
-                    }}
-                />
-
+    // Hide message after 3 seconds
+    useEffect(() => {
+        if (showMessage) {
+            const timer = setTimeout(() => {
+                setShowMessage(false)
+            }, 3000)
+            return () => clearTimeout(timer)
+        }
+    }, [showMessage])
+    
+    // Clipboard function
+    const handleShareClick = () => {
+        const currentUrl = window.location.href
+        navigator.clipboard.writeText(currentUrl)
+            .then(() => {
+                setShowMessage(true)
+            })
+            .catch(err => {
+                console.error('Cannot copy the link!', err)
+            })
+    }
+    
+    // If there is no post data, show placeholder
+    if (!post) return null
+    
+    return (
+        <section className={styles.articleContent__section}>
+            {showMessage && (
+                <MessageCard title="Link copied to clipboard" />
+            )}
+            <div className={styles.articleContent__container}>
+                {post.mainImage && (
+                    <AdaptiveImage 
+                        image={post.mainImage}
+                        alt={post.mainImage.alt || post.title}
+                        rounded={true}
+                        priority={true}
+                    />
+                )}
+                
                 <div className={styles.articleContent__wrapper}>
-                    <h3>Title will be here</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <ul className={styles.postContent__list}>
-                        <li className={styles.articleContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li className={styles.articleContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li className={styles.articleContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
-                        <li className={styles.articleContent__listItem}>Lorem ipsum dolor sit amet consectetur. </li>
-                    </ul>
-                </div>
-
-                <Image
-                    src='/article-content-img-2.png'
-                    alt='image'
-                    width={800}
-                    height={500}
-                    layout='responsive'
-                    style={{
-                        objectFit: 'cover', 
-                        borderTopLeftRadius: '20px', 
-                        borderTopRightRadius: '20px', 
-                    }}
-                />
-
-                <div className={styles.articleContent__wrapper}>
-                    <h3>Title will be here</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <ArticleQuote/>
-                </div>
-
-                <div className={styles.articleContent__wrapper}>
-                    <h3>Title will be here</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.</p>
+                    {post.body && <PortableText value={post.body} />}
+                    
                     <div className={styles.articleContent__divider}></div>
-
+                    
                     <Button
                         text='Share this article'
                         buttonType='outlined'
+                        onClick={handleShareClick}
                     />
                 </div>
-        </div>
-    </section>
-  )
+            </div>
+        </section>
+    )
 }

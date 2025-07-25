@@ -12,7 +12,7 @@ export const ArticlesList = ({ posts }) => {
           {posts?.length > 0 && posts?.map((post) => (
             <ArticleCard
               key={post?.slug.current}
-              {...post}
+              post={post}
             />
           ))}
         </div>

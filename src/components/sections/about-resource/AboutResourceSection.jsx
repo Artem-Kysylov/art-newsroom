@@ -12,31 +12,23 @@ export const AboutResourceSection = () => {
                 <Image
                     src={aboutResourceImage}
                     alt="about-resource"
-                    layout='intrinsic'
                     width={560}
                     height={485}
-                    style={{objectFit: 'cover'}}
+                    style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                        objectFit: 'cover'
+                    }}
                 />
 
                 <div className={styles.content__wrapper}>
-                    <h2 className={styles.content__title}>Title of this section will be here</h2>
+                    <h2 className={styles.content__title}>Why Art Matters</h2>
                         <p className={styles.content__text}>
-                            Lorem ipsum dolor sit amet consectetur. Praesent sed nec leo nulla tortor in. Ullamcorper risus scelerisque facilisis eget gravida fusce sodales lectus. Imperdiet ut sit elit ultrices facilisis tellus posuere. Adipiscing in suspendisse ipsum pellentesque elementum aliquet sit. Nam ut semper enim quam sodales fringilla in diam. Elit nec a blandit donec platea. Rhoncus eget quam volutpat sed id nisl.
+                           Art has always been more than just decoration — it’s a way humanity tells its story. From cave paintings to symphonies, from Shakespeare’s plays to modern poetry, art reflects who we are, what we value, and how we see the world.
                         </p>
-                        <ul className={styles.content__list}>
-                            <li  className={styles.content__listItem}>
-                                Lorem ipsum dolor sit amet consectetur.
-                            </li>
-                            <li className={styles.content__listItem}>
-                                Lorem ipsum dolor sit amet consectetur.
-                            </li>
-                            <li className={styles.content__listItem}>
-                                Lorem ipsum dolor sit amet consectetur.
-                            </li>
-                            <li className={styles.content__listItem}>
-                                Lorem ipsum dolor sit amet consectetur.
-                            </li>
-                        </ul>
+                        <p className={styles.content__text}>
+                            At Art Newsroom, we dive into the rich tapestry of art history, exploring literature, painting, music, and poetry from different cultures and eras. Whether you're a student, a casual reader, or simply curious, this blog is a place to learn, reflect, and connect with the timeless language of art.
+                        </p>
                 </div>
             </div>
         </div>
