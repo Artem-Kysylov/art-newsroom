@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🎨 Art Newsroom
 
-## Getting Started
+> **Art Newsroom** is a blog dedicated to international art, featuring articles about **literature, poetry, music, sculpture, and painting**.
+> Built with **Next.js** and powered by **Sanity CMS**, it demonstrates modern content-driven website architecture.
 
-First, run the development server:
+---
+
+### ✨ Features
+
+* Dynamic blog with categories for various art forms
+* Fully responsive layout and clean UI
+* Content managed via **Sanity CMS**
+* Server-side rendering and fast performance with **Next.js**
+* Styled using **SCSS**
+
+---
+
+### 🔧 Tech Stack
+
+* **Next.js** (React Framework)
+* **SCSS** for styling
+* **Sanity CMS** for content management and blog posts
+
+---
+
+### 🚀 Live Demo
+
+[Live Demo on Vercel →](https://art-newsroom.vercel.app)
+
+---
+
+### 📂 Running Locally
 
 ```bash
+git clone https://github.com/your-username/art-newsroom.git
+cd art-newsroom
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 💡 Purpose of This Project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project demonstrates:
 
-## Learn More
+* Building a dynamic blog powered by a headless CMS
+* Clean front-end architecture with Next.js
+* Responsive design for content-heavy websites
+* Managing content efficiently via Sanity Studio
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📬 Feedback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Feel free to reach out via LinkedIn or email for collaboration or feedback.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚠️ Disclaimer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> **Note:** This project is created for portfolio and demonstration purposes. All content is for illustrative use only.
+
+---
+
